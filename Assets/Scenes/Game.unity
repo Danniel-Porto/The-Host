@@ -21576,7 +21576,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 40d43767300985947bd1cd4af5953ca9, type: 3}
   - {fileID: 8300000, guid: 6f884dfcc6b7a3d4e9c24cc36052100d, type: 3}
   - {fileID: 8300000, guid: f3c1534b57e631d4f84c18b17e6e580c, type: 3}
-  ambience: {fileID: 8300000, guid: f2329c938a48ae74d9c4432ff12889f0, type: 3}
+  ambience: {fileID: 8300000, guid: 59449e0e2b3405041af899af7850b084, type: 3}
   helpScream: {fileID: 8300000, guid: 330351b6e268e1847b2ab078b30a849a, type: 3}
   screamAudioSource: {fileID: 1770717612}
   bush:
