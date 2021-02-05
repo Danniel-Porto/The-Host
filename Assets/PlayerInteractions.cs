@@ -136,7 +136,7 @@ public class PlayerInteractions : MonoBehaviour
                         CloseAllInteractionUI();
                         break;
                     case "Sack":
-                        Instantiate(saltPrefab, interactedObject.transform.position, interactedObject.transform.rotation);
+                        Instantiate(saltPrefab, interactedObject.transform.position + new Vector3(0f, -0.21f, 0f), interactedObject.transform.rotation);
                         Destroy(interactedObject);
                         inv.placedItems += 1;
                         CloseAllInteractionUI();

@@ -19,9 +19,15 @@ public class MainMenuHandler : MonoBehaviour
         audioSource.PlayOneShot(themeSong, 1f * PlayerPrefs.GetFloat("volume")/100);
     }
 
+    public void StartGame()
+    {
+        transform.Find("MainPanel").gameObject.SetActive(false);
+        transform.Find("LorePanel").gameObject.SetActive(true);
+    }
+
     public void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("LoadingScreen");
     }
 
     public void QuitGame()
