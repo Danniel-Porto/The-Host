@@ -6,6 +6,7 @@ public class WorldAudioHandler : MonoBehaviour
 {
     [SerializeField] AudioClip[] rustlingBushes;
     [SerializeField] AudioClip ambience;
+    [SerializeField] AudioClip carDoorClosing;
     [SerializeField] AudioClip helpScream;
     [SerializeField] AudioSource screamAudioSource;
     [SerializeField] AudioSource[] bush;
@@ -26,6 +27,7 @@ public class WorldAudioHandler : MonoBehaviour
     void StartAmbience()
     {
         audioSource.PlayOneShot(ambience, 0.3f * settings.playerVolume);
+        audioSource.PlayOneShot(carDoorClosing, 0.3f * settings.playerVolume);
     }
 
     private void Update()

@@ -94,7 +94,7 @@ public class PlayerInteractions : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (activeInteraction)
         {
@@ -132,12 +132,14 @@ public class PlayerInteractions : MonoBehaviour
                     case "Candle":
                         Instantiate(litCandlePrefab, interactedObject.transform.position, interactedObject.transform.rotation);
                         Destroy(interactedObject);
+                        activeInteraction = false;
                         inv.placedItems += 1;
                         CloseAllInteractionUI();
                         break;
                     case "Sack":
                         Instantiate(saltPrefab, interactedObject.transform.position + new Vector3(0f, -0.21f, 0f), interactedObject.transform.rotation);
                         Destroy(interactedObject);
+                        activeInteraction = false;
                         inv.placedItems += 1;
                         CloseAllInteractionUI();
                         break;

@@ -12,6 +12,7 @@ public class PauseMenuHandler : MonoBehaviour
     [SerializeField] Text senseValue;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] AudioSource ambienceAudioSource;
+    [SerializeField] GameObject fpsDisplay;
 
     [SerializeField] PlayerSettings ps;
 
@@ -23,6 +24,7 @@ public class PauseMenuHandler : MonoBehaviour
     private void Update()
     {
         PauseMenu();
+        FpsCount();
     }
 
     void PauseMenu()
@@ -37,6 +39,17 @@ public class PauseMenuHandler : MonoBehaviour
             Cursor.visible = false;
             pauseMenu.SetActive(false);
         }
+    }
+
+    void FpsCount()
+    {
+        int fps = (int) (1.0f / Time.smoothDeltaTime);
+        fpsDisplay.GetComponent<Text>().text = (fps).ToString();
+    }
+
+    public void SetFpsDisplay(bool i)
+    {
+        fpsDisplay.SetActive(i);
     }
 
     public void ButtonConfirm()

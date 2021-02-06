@@ -9,6 +9,11 @@ public class WorldStateEvents : MonoBehaviour
 
     [SerializeField] PlayerSettings settings;
 
+    [SerializeField] GameObject blinkingPost;
+
+    int cycle, timer = 0;
+    bool blink;
+
     bool gateIsClosing, gateIsClosed;
     int gateState = 0;
 
@@ -24,6 +29,22 @@ public class WorldStateEvents : MonoBehaviour
     private void FixedUpdate()
     {
         MoveGate();
+        BlinkPost();
+    }
+
+    private void BlinkPost()
+    {
+        if (timer == cycle)
+        {
+            timer = 0;
+            cycle = Random.Range(4, 20);
+            blink = !blink;
+            blinkingPost.transform.Find("Point Light").gameObject.GetComponent<Light>().enabled = blink;
+            blinkingPost.transform.Find("Spot Light").gameObject.GetComponent<Light>().enabled = blink;
+        } else
+        {
+            timer += 1;
+        }
     }
 
     public void CloseGate()
